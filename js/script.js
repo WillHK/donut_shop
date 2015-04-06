@@ -8,7 +8,7 @@
   };
   TopPot.prototype.donutsPerHour = function () {
     var numberCustomers = Math.floor(Math.random() * this.max - this.min + 1) + this.min;
-    return numberCustomers * this.average;
+    return Math.round(numberCustomers * this.average);
   };
 
   TopPot.prototype.donutsPerDay = function () {
@@ -23,23 +23,23 @@
 
   TopPot.prototype.render = function () {
     var dailyTotal = this.donutsPerDay();
+    var elTr = document.getElementById(this.name);
     for (var i = 0; i <= this.hourlyTotals.length; i++) {
       var el = document.createElement('td');
       el.textContent = this.hourlyTotals[i];
-      var elTr = document.getElementById(this.name);
       elTr.appendChild(el);
     }
     el.textContent = dailyTotal;
     elTr.appendChild(el);
   };
-  var downtown = new TopPot(10, 50, 3, "store1");
-  var capitolHill = new TopPot(6, 30, 2, "store2");
-  var slu = new TopPot(13, 60, 4, "store3");
-  var kirkland = new TopPot(3, 25, 2, "store4");
-  var bellevue = new TopPot(8, 35, 3, "store5");
+  var downtown = new TopPot(8, 43, 4.50, "store1");
+  var capitolHill = new TopPot(4, 37, 2.00, "store2");
+  var slu = new TopPot(9, 23, 6.33, "store3");
+  var wedgewood = new TopPot(2, 28, 1.25, "store4");
+  var ballard = new TopPot(8, 58, 3.75, "store5");
   downtown.render();
   capitolHill.render();
   slu.render();
-  kirkland.render();
-  bellevue.render();
+  wedgewood.render();
+  ballard.render();
 }) ();
