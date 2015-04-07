@@ -1,22 +1,22 @@
 (function () {
   window.stores = [];
-  var TopPot = function (min, max, average, name, hoursOpen) {
+  window.TopPot = function (storeName, min, max, average, hoursOpen) {
+    this.storeName = storeName;
     this.min = min;
     this.max = max;
     this.average = average;
     this.hourlyTotals = [];
-    this.name = name;
     this.hoursOpen = hoursOpen || 11;
     this.openTime = '7:00 AM';
     this.closeTime = '6:00 PM';
   };
 
   TopPot.prototype.randomCustomerGenerator = function () {
-
+    return Math.floor(Math.random() * this.max - this.min + 1) + this.min;
   };
 
   TopPot.prototype.donutsPerHour = function () {
-    var numberCustomers = Math.floor(Math.random() * this.max - this.min + 1) + this.min;
+    var numberCustomers = this.randomCustomerGenerator();
     return Math.round(numberCustomers * this.average);
   };
 
@@ -32,26 +32,31 @@
 
   TopPot.prototype.render = function () {
     var dailyTotal = this.donutsPerDay();
-    var elTr = document.getElementById(this.name);
-    for (var i = 0; i <= this.hoursOpen; i++) {
-      var el = document.createElement('td');
-      el.textContent = this.hourlyTotals[i];
-      elTr.appendChild(el);
+    var elTr = document.createElement('tr');
+    var elName = document.createElement('th');
+    var elDailyTotal = document.createElement('td');
+    elName.textContent = this.storeName;
+    elTr.appendChild(elName);
+    for (var i = 0; i < this.hoursOpen; i++) {
+      var elHourlyTotals = document.createElement('td');
+      elHourlyTotals.textContent = this.hourlyTotals[i];
+      elTr.appendChild(elHourlyTotals);
     }
-    el.textContent = dailyTotal;
-    elTr.appendChild(el);
+    elDailyTotal.textContent = dailyTotal;
+    elTr.appendChild(elDailyTotal);
+    return elTr
   };
-  window.stores.push(new TopPot(8, 43, 4.50, "store1"));
-  window.stores.push(new TopPot(4, 37, 2.00, "store2"));
-  console.log(window.stores);
-  var downtown = new TopPot(8, 43, 4.50, "store1");
-  var capitolHill = new TopPot(4, 37, 2.00, "store2");
-  var slu = new TopPot(9, 23, 6.33, "store3");
-  var wedgewood = new TopPot(2, 28, 1.25, "store4");
-  var ballard = new TopPot(8, 58, 3.75, "store5");
-  downtown.render();
-  capitolHill.render();
-  slu.render();
-  wedgewood.render();
-  ballard.render();
+  window.renderAll = function () {
+    var tableEl = document.getElementById('storeTable');
+    tableEl.innerHTML = '<tr id="hours"><th></th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>Total</td></tr>';
+    window.stores.forEach(function (store) {
+      tableEl.appendChild(store.render());
+    });
+  };
+  window.stores.push(new TopPot("Downtown", 8, 43, 4.50));
+  window.stores.push(new TopPot("Capitol Hill", 4, 37, 2.00));
+  window.stores.push(new TopPot("South Lake Union", 9, 23, 6.33));
+  window.stores.push(new TopPot("Wedgewood", 2, 28, 1.25));
+  window.stores.push(new TopPot("Ballard", 8, 58, 3.75));
+  window.renderAll();
 }) ();
