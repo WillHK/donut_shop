@@ -37,7 +37,7 @@
     var elDailyTotal = document.createElement('td');
     elName.textContent = this.storeName;
     elTr.appendChild(elName);
-    for (var i = 0; i < this.hoursOpen; i++) {
+    for (var i = 0; i <  this.hoursOpen; i++) {
       var elHourlyTotals = document.createElement('td');
       elHourlyTotals.textContent = this.hourlyTotals[i];
       elTr.appendChild(elHourlyTotals);
@@ -48,15 +48,16 @@
   };
   window.renderAll = function () {
     var tableEl = document.getElementById('storeTable');
-    tableEl.innerHTML = '<tr id="hours"><th></th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>Total</td></tr>';
-    stores.forEach(function (store) {
+    tableEl.innerHTML = '<tr id="hours"><th id="locationsTag">Locations</th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>Total</td></tr>';
+    window.stores.forEach(function (store) {
       tableEl.appendChild(store.render());
     });
   };
-  stores.push(new TopPot("Downtown", 8, 43, 4.50));
-  stores.push(new TopPot("Capitol Hill", 4, 37, 2.00));
-  stores.push(new TopPot("South Lake Union", 9, 23, 6.33));
-  stores.push(new TopPot("Wedgewood", 2, 28, 1.25));
-  stores.push(new TopPot("Ballard", 8, 58, 3.75));
-  renderAll();
+  window.stores.push(new TopPot("Downtown", 8, 43, 4.50));
+  window.stores.push(new TopPot("Capitol Hill", 4, 37, 2.00));
+  window.stores.push(new TopPot("South Lake Union", 9, 23, 6.33));
+  window.stores.push(new TopPot("Wedgewood", 2, 28, 1.25));
+  window.stores.push(new TopPot("Ballard", 8, 58, 3.75));
+  console.log(stores);
+  window.renderAll();
 }) ();
