@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Top Pot Donuts</title>
+  <link href='http://fonts.googleapis.com/css?family=Alef&subset=latin,hebrew' rel='stylesheet' type='text/css'>
+  <link href="style/body.css" rel="stylesheet">
 </head>
 <body>
+  <h1>Top Pot Donut</h1>
+  <h2>Daily Sales Projections</h2>
   <table id="storeTable">
-    <tr id="hours"><th></th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>Total</td></tr>
+    <tr id="hours"><th id="locationsTag">Locations</th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>Total</td></tr>
   </table>
   <form id="newStoreForm">
-    <label for="storeName">Store Name
-      <input type="text" id="storeName" name="name" />
-    </label>
-    <label for="minCustomers">Minimum Customers per Hour
-      <input type="text" id="minCustomers" name="min"/>
-    </label>
-    <label for="maxCustomers">Maximum Customers per Hour
-      <input type="text" id="maxCustomers" name="max"/>
-    </label>
-    <label for="averagePurchase">Average Number of Donuts per Customer
-      <input type="text" id="averagePurchase" name="average"/>
-    </label>
+    <label for="storeName">Store Name</label>
+      <input type="text" id="storeName" name="name">
+    <label for="minCustomers">Minimum Customers per Hour</label>
+      <input type="text" id="minCustomers" name="min">
+    <label for="maxCustomers">Maximum Customers per Hour</label>
+      <input type="text" id="maxCustomers" name="max">
+    <label for="averagePurchase">Average Number of Donuts per Customer</label>
+      <input type="text" id="averagePurchase" name="average">
     <button id="newStoreButton">Submit</button>
   </form>
   <button id="clearData">Clear</button>
