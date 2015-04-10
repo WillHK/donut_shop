@@ -1,0 +1,57 @@
+[class*='col-'] {
+  float: left;
+}
+
+.col-1-3 {
+  width: 33.33%;
+  height: 100%;
+}
+
+.col-2-3 {
+  width: 66.66%;
+}
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+[class*='col-'] {
+  padding-right: 20px;
+}
+
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+form {
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+}
+.formButton {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.formButton:last-child {
+  float: right;
+  right: 100px;
+}
+
+
+label {
+  float: left;
+}
+input {
+  float: right;
+}
+button {
+
+}
