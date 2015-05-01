@@ -46,9 +46,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+#header {
+  margin: 0 auto;
+}
 body {
-  background-color: #F2ACEE;
+  background-color: aquamarine;
   font-family: 'Alef', sans-serif;
 }
 h1 {
@@ -62,8 +64,9 @@ table, th, td {
   color: #5555555;
 }
 table {
-  width: 95%;
-  position: abolute;
+  margin: 0 auto;
+  width: 85%;
+  position: absolute;
 }
 th, td {
   padding: 5px 10px 5px 10px;
@@ -75,6 +78,14 @@ th {
 button {
   width: 10%;
   height 5%;
+}
+.tableContainer {
+  width: 90%;
+  height: 200px;
+}
+header {
+  height: 120px;
+  width: 50%;
 }
 #locationsTag {
   text-decoration: underline;

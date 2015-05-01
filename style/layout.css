@@ -1,0 +1,49 @@
+.formInput {
+  margin: 0 auto;
+}
+form {
+  display: block;
+  position: relative;
+  border: 1px solid black;
+  height: 7em;
+  width: 33%;
+  left: 33%;
+  top: 30px;
+}
+.formButton {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.tableContainer {
+  margin: 0 auto;
+}
+.formButton:last-child{
+  left: 200px;
+}
+label {
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+
+h1 {
+  position: absolute;
+  left: 25%;
+}
+h2 {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+}
+header {
+  margin: 0 auto;
+  position: relative;
+}
+
+#TopPot {
+  position: fixed;
+  left: 90%;
+  top: 90%;
+}
+
