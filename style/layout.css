@@ -1,57 +1,44 @@
-[class*='col-'] {
-  float: left;
-}
-
-.col-1-3 {
-  width: 33.33%;
-  height: 100%;
-}
-
-.col-2-3 {
-  width: 66.66%;
-}
-
-.grid:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-[class*='col-'] {
-  padding-right: 20px;
-}
-
-[class*='col-']:last-of-type {
-  padding-right: 0;
+.formInput {
+  margin: 0 auto;
 }
 form {
-  border: 1px solid black;
+  display: block;
   position: relative;
-  overflow: hidden;
-  height: 100px;
+  border: 1px solid black;
+  height: 7em;
+  width: 33%;
+  left: 33%;
+  top: 30px;
 }
 .formButton {
   position: absolute;
   bottom: 0;
   left: 0;
 }
-.formButton:last-child {
-  float: right;
-  right: 100px;
+.tableContainer {
+  margin: 0 auto;
 }
-
-
+.formButton:last-child{
+  left: 200px;
+}
 label {
+  position: relative;
+  overflow: hidden;
   float: left;
 }
-input {
-  float: right;
-}
-button {
 
+h1 {
+  position: absolute;
+  left: 25%;
 }
+h2 {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+}
+header {
+  margin: 0 auto;
+  position: relative;
+}
+
+
